@@ -3,3 +3,4 @@ Gunicorn
 joblib
 scikit-learn
 tensorflow
+flask-cors
