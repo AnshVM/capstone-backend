@@ -15,7 +15,9 @@ model = joblib.load('mlp_xss_clf.joblib')
 def predict():
     try:
         data = request.json
+        print("Recieved json: ",data)
         url = data.get('url','')
+        print("url: ",url)
         values = features.extract_features(url)
         predictions = model.predict([values])
         return jsonify({'prediction': '{}'.format(predictions[0]) })
